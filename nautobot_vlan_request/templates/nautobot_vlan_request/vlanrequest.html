@@ -1,0 +1,31 @@
+{% extends 'generic/object_detail.html' %}
+
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>VLAN Request Details</strong>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th>VLAN ID</th>
+            <td>{{ object.vlan_id }}</td>
+        </tr>
+        <tr>
+            <th>VLAN Name</th>
+            <td>{{ object.vlan_name }}</td>
+        </tr>
+        <tr>
+            <th>Tenant</th>
+            <td>{{ object.tenant }}</td>
+        </tr>
+        <tr>
+            <th>Subnet</th>
+            <td>{{ object.subnet }}</td>
+        </tr>
+        <tr>
+            <th>Gateway</th>
+            <td>{{ object.gateway }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
