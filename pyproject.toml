@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "nautobot-vlan-request"
+version = "0.1.0"
+description = "VLAN Request App"
+authors = ["Amit Gupta <gupta-amit@hcltech.com>"]
+readme = "README.md"
+#homepage = "https://github.com/amitgupta369/nautobot-vlan-request"
+#repository = "https://github.com/amitgupta369/nautobot-vlan-request"
+keywords = ["nautobot", "nautobot-plugin", "vlan"]
+include = [
+    "README.md",
+]
+packages = [
+    { include = "nautobot_vlan_request" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.15"
+# Used for local development
+nautobot = ">=3.0.0,<4.0.0"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
