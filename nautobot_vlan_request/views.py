@@ -11,6 +11,10 @@ class VLANRequestListView(ObjectListView):
     filterset = VLANRequestFilterSet
 
 
+class VLANRequestDetailView(ObjectView):
+    queryset = VLANRequest.objects.all()
+
+
 class VLANRequestEditView(ObjectEditView):
     queryset = VLANRequest.objects.all()
     model_form = VLANRequestForm

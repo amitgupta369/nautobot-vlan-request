@@ -94,6 +94,6 @@ Marks migrations as a Python package.
 
 ## Development Flow
 
-models.py → forms.py → tables.py → filters.py → views.py → urls.py
+models.py → forms.py → tables.py → filters.py → views.py → urls.py --navigation.py
 models.py → serializers.py → api/views.py → api/urls.py
 models.py → jobs.py → signals.py → automation execution

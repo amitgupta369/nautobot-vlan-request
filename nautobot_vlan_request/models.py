@@ -10,11 +10,12 @@ class VLANRequest(PrimaryModel):
 
 
 class Meta:
+
     def __init__(self):
         pass
 
     ordering = ["vlan_id"]
 
-def __str__(self):
-    return f"{self.vlan_id} - {self.vlan_name}"
+    def __str__(self):
+        return f"{self.vlan_id} - {self.vlan_name}"
 

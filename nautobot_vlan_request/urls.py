@@ -12,4 +12,9 @@ urlpatterns = [
         VLANRequestEditView.as_view(),
         name="vlanrequest_add",
     ),
+    path(
+        "<uuid:pk>/",
+        VLANRequestDetailView.as_view(),
+        name="vlanrequest",
+    ),
 ]
