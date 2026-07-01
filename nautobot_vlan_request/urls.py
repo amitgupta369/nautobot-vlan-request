@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import VLANRequestListView, VLANRequestEditView
+from .views import VLANRequestListView, VLANRequestEditView, VLANRequestDetailView
 
 urlpatterns = [
     path(
