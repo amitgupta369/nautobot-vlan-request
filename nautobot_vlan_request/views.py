@@ -1,4 +1,4 @@
-from nautobot.apps.views import ObjectListView, ObjectEditView
+from nautobot.apps.views import ObjectListView, ObjectEditView, ObjectView
 from .models import VLANRequest
 from .tables import VLANRequestTable
 from .forms import VLANRequestForm
