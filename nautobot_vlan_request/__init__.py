@@ -18,3 +18,5 @@ class NautobotVLANRequestConfig(NautobotAppConfig):
     description = "Nautobot VLAN Request App developed by HCLTech"
 
 config = NautobotVLANRequestConfig  # pylint:disable=invalid-name
+
+jobs = ["nautobot_vlan_request.jobs"]
