@@ -36,3 +36,5 @@ class GenerateACIYaml(Job):
         self.log_success(
             message=f"Generated YAML at {output_file}"
         )
+
+register_jobs(GenerateACIYaml)
