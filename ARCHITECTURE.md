@@ -92,8 +92,25 @@ Marks migrations as a Python package.
 
 ---
 
+## Create service
+```html
+    services/aci_yaml.py
+    
+```
+
+## Added jobs
+```html
+ -  Add job in jobs.py
+ - Update __init__.py
+ - run nautobot-server post_upgrade
+
+```
 ## Development Flow
 
 models.py → forms.py → tables.py → filters.py → views.py → urls.py --navigation.py
+
 models.py → serializers.py → api/views.py → api/urls.py
 models.py → jobs.py → signals.py → automation execution
+
+
+

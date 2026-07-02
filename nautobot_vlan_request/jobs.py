@@ -9,6 +9,7 @@ from .services.aci_yaml import ACIYamlGenerator
 class GenerateACIYaml(Job):
     class Meta:
         name = "Generate ACI YAML"
+        enabled = True
         description = "Generate NetAsCode YAML from VLAN Request"
 
     vlan_request = ObjectVar(

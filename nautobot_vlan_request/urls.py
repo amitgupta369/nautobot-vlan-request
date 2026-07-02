@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import VLANRequestListView, VLANRequestEditView, VLANRequestDetailView
+from .views import VLANRequestListView, VLANRequestEditView, VLANRequestDetailView, generate_yaml_view
 
 urlpatterns = [
     path(
@@ -16,5 +16,10 @@ urlpatterns = [
         "<uuid:pk>/",
         VLANRequestDetailView.as_view(),
         name="vlanrequest",
+    ),
+    path(
+        "<uuid:pk>/generate-yaml/",
+        generate_yaml_view,
+        name="vlanrequest_generate_yaml",
     ),
 ]
