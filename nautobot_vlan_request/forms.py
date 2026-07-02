@@ -9,6 +9,7 @@ class VLANRequestForm(forms.ModelForm):
             "vlan_id",
             "vlan_name",
             "tenant",
+            "vrf",
             "subnet",
             "gateway",
         ]

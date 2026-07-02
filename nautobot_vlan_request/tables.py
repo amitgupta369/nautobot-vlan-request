@@ -14,6 +14,7 @@ class VLANRequestTable(BaseTable):
             "vlan_id",
             "vlan_name",
             "tenant",
+            "vrf",
             "subnet",
             "gateway",
         )

@@ -13,6 +13,7 @@ class VLANRequest(PrimaryModel):
     vlan_id = models.PositiveIntegerField(unique=True)
     vlan_name = models.CharField(max_length=100)
     tenant = models.CharField(max_length=100)
+    vrf = models.CharField(max_length=100)
     subnet = models.CharField(max_length=50)
     gateway = models.GenericIPAddressField()
 
