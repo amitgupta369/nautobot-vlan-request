@@ -1,12 +1,13 @@
 {% extends 'generic/object_detail.html' %}
 
-{% block buttons %}
-<a href="{% url 'plugins:nautobot_vlan_request:vlanrequest_generate_yaml' object.pk %}" class="btn btn-primary">
-    Generate YAML
-</a>
-{% endblock %}
-
 {% block content %}
+
+    <div class="pull-right mb-3">
+        <a href="{{ generate_yaml_url }}" class="btn btn-primary">
+            Generate YAML
+        </a>
+    </div>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <strong>VLAN Request Details</strong>
