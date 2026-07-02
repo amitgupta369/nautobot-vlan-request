@@ -1,6 +1,6 @@
 import os
 
-from nautobot.apps.jobs import Job, ObjectVar
+from nautobot.apps.jobs import Job, ObjectVar, register_jobs
 
 from .models import VLANRequest
 from .services.aci_yaml import ACIYamlGenerator
