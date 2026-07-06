@@ -31,8 +31,8 @@ class GenerateACIYaml(Job):
 
         ProvisioningService(vlan_request).execute()
 
-        self.log_success(
-            message=f"Provisioned VLAN {vlan_id}"
+        self.logger.info(
+            msg=f"Provisioned VLAN {vlan_id}"
         )
 
     def run1(self, vlan_id):

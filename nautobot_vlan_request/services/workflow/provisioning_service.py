@@ -5,7 +5,7 @@ from pathlib import Path
 from django.conf import settings
 
 from nautobot_vlan_request.models import VLANRequest
-from nautobot_vlan_request.services.aci.yaml_generator import ACIYamlGenerator
+from nautobot_vlan_request.services.aci_yaml import ACIYamlGenerator
 from nautobot_vlan_request.services.git.git_service import GitService
 
 
@@ -32,7 +32,7 @@ class ProvisioningService:
         rendered_yaml = generator.render_yaml()
 
         self.vlan_request.rendered_yaml = rendered_yaml
-        self.vlan_request.status = VLANRequest.STATUS_GENERATED
+        self.vlan_request.status = "Generated"
         self.vlan_request.save()
 
         #
@@ -84,7 +84,7 @@ class ProvisioningService:
         #
         self.vlan_request.git_branch = branch_name
         self.vlan_request.git_commit = commit.hexsha
-        self.vlan_request.status = VLANRequest.STATUS_COMMITTED
+        self.vlan_request.status = "Committed"
         self.vlan_request.save()
 
         return self.vlan_request
