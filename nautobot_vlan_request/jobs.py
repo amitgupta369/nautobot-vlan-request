@@ -1,9 +1,13 @@
 import os
 
 from nautobot.apps.jobs import Job, IntegerVar, register_jobs
+from nautobot_vlan_request.services.workflow.provisioning_service import (
+    ProvisioningService,
+)
 
 from .models import VLANRequest
 from .services.aci_yaml import ACIYamlGenerator
+
 
 
 class GenerateACIYaml(Job):
@@ -20,6 +24,18 @@ class GenerateACIYaml(Job):
     output_directory = "/home/nautobot/data"
 
     def run(self, vlan_id):
+
+        vlan_request = VLANRequest.objects.get(
+            vlan_id=vlan_id
+        )
+
+        ProvisioningService(vlan_request).execute()
+
+        self.log_success(
+            message=f"Provisioned VLAN {vlan_id}"
+        )
+
+    def run1(self, vlan_id):
         """Generate NetAsCode YAML from a VLAN Request."""
 
         self.logger.info("Searching VLAN Request...")
