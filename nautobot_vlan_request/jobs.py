@@ -29,7 +29,7 @@ class GenerateACIYaml(Job):
 
         except VLANRequest.DoesNotExist:
             self.logger.error(
-                message=f"VLAN {vlan_id} not found."
+                msg=f"VLAN {vlan_id} not found."
             )
             return
 
@@ -56,7 +56,7 @@ class GenerateACIYaml(Job):
             vlan_request.save()
 
             self.logger.info(
-                message=f"Generated YAML: {output_file}"
+                msg=f"Generated YAML: {output_file}"
             )
 
         except Exception as exc:
@@ -64,7 +64,7 @@ class GenerateACIYaml(Job):
             vlan_request.save()
 
             self.logger.error(
-                message=str(exc)
+                msg=str(exc)
             )
 
             raise
