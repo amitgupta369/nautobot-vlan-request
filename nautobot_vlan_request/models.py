@@ -16,6 +16,15 @@ class VLANRequest(PrimaryModel):
     vrf = models.CharField(max_length=100)
     subnet = models.CharField(max_length=50)
     gateway = models.GenericIPAddressField()
+    git_branch = models.CharField(
+        max_length=200,
+        blank=True,
+    )
+
+    git_commit = models.CharField(
+        max_length=64,
+        blank=True,
+    )
 
     status = models.CharField(
         max_length=20,

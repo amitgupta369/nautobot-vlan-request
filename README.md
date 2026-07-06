@@ -78,3 +78,18 @@ Current release:
 ```text
 v0.1.0
 ```
+
+
+```python
+PLUGINS_CONFIG = {
+    "nautobot_vlan_request": {
+        "git": {
+            "repository": "/opt/git/nac-aci-simple-example",
+            "branch": "develop",
+            "yaml_directory": "data",
+            "author_name": "Amit Gupta",
+            "author_email": "gupta-amit@hcltech.com",
+        }
+    }
+}
+```
