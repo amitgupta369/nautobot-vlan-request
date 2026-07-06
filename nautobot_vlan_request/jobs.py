@@ -17,7 +17,7 @@ class GenerateACIYaml(Job):
         required=True,
     )
 
-    output_directory = "/opt/netascode/data"
+    output_directory = "/home/nautobot/data"
 
     def run(self, vlan_id):
         """Generate NetAsCode YAML from a VLAN Request."""
