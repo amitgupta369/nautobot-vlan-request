@@ -52,7 +52,7 @@ class GenerateACIYaml(Job):
             rendered_yaml = generator.save_to_file(output_file)
 
             vlan_request.rendered_yaml = rendered_yaml
-            vlan_request.status = VLANRequest.STATUS_GENERATED
+            vlan_request.status = "Generated"
             vlan_request.save()
 
             self.log_success(
@@ -60,7 +60,7 @@ class GenerateACIYaml(Job):
             )
 
         except Exception as exc:
-            vlan_request.status = VLANRequest.STATUS_FAILED
+            vlan_request.status = "Failed"
             vlan_request.save()
 
             self.log_failure(
