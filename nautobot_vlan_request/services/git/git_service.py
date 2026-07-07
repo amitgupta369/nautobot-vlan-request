@@ -9,7 +9,7 @@ from git.exc import GitCommandError
 class GitService:
     """Wrapper around GitPython."""
 
-    def __init__(self, repository: str | Path):
+    def __init__(self, repository, username=None, token=None):
         self.repository = Path(repository)
 
         if not self.repository.exists():
@@ -18,6 +18,9 @@ class GitService:
             )
 
         self.repo = Repo(self.repository)
+        self.username = username
+        self.token = token
+
 
     @property
     def current_branch(self):
@@ -86,4 +89,21 @@ class GitService:
 
         return not self.repo.is_dirty(
             untracked_files=True
+        )
+
+    def configure_remote(self):
+        """Temporarily configure origin URL with PAT."""
+
+        if not self.username or not self.token:
+            return
+
+        remote = (
+            f"https://{self.username}:{self.token}"
+            "@github.com/amitgupta369/nac-aci-simple-example.git"
+        )
+
+        self.repo.git.remote(
+            "set-url",
+            "origin",
+            remote,
         )

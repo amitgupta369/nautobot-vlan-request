@@ -4,6 +4,8 @@ from pathlib import Path
 
 from django.conf import settings
 
+from nautobot.extras.models import Secret
+
 from nautobot_vlan_request.models import VLANRequest
 from nautobot_vlan_request.services.aci_yaml import ACIYamlGenerator
 from nautobot_vlan_request.services.git.git_service import GitService
@@ -20,6 +22,9 @@ class ProvisioningService:
         self.repository = Path(plugin_config["repository"])
         self.default_branch = plugin_config["branch"]
         self.yaml_directory = plugin_config["yaml_directory"]
+        self.username = Path(plugin_config["username"])
+        secret = Secret.objects.get(name="github-token")
+        self.token = secret.get_value()
 
     def execute(self):
         """Execute complete provisioning workflow."""
@@ -62,7 +67,15 @@ class ProvisioningService:
         #
         # Step 4 - Git
         #
-        git = GitService(self.repository)
+        #git = GitService(self.repository)
+
+        git = GitService(
+            repository=self.repository,
+            username=self.username,
+            token=self.token,
+        )
+
+        git.configure_remote()
 
         git.checkout(self.default_branch)
 
