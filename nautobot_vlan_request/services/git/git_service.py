@@ -37,7 +37,7 @@ class GitService:
         self.repo.git.checkout(branch)
 
     def pull(self):
-        """Pull latest changes."""
+        """Pull st changes."""
         self.repo.remotes.origin.pull()
 
     def branch_exists(self, branch):

@@ -89,6 +89,7 @@ PLUGINS_CONFIG = {
             "yaml_directory": "data",
             "author_name": "Amit Gupta",
             "author_email": "gupta-amit@hcltech.com",
+            "username": "amitgupta369"
         }
     }
 }

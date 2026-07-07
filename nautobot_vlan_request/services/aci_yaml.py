@@ -23,7 +23,7 @@ class ACIYamlGenerator:
                                 "vrf": self.vlan_request.vrf,
                                 "subnets": [
                                     {
-                                        "ip": self.vlan_request.gateway
+                                        "ip": self.vlan_request.subnet,
                                     }
                                 ]
                             }

@@ -56,7 +56,6 @@ class ProvisioningService:
         yaml_file = (
             self.repository
             / self.yaml_directory
-            / self.vlan_request.tenant.lower()
             / f"vlan-{self.vlan_request.vlan_id}.yaml"
         )
 
